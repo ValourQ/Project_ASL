@@ -1,0 +1,195 @@
+/* ================= PAGE ================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.pageTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+/* ================= TOGGLE ================= */
+
+.toggleWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* ================= ASSISTANT ================= */
+
+.assistantWrapper {
+    width: 100%;
+}
+
+/* ================= MAIN GRID ================= */
+
+.mainGrid{
+
+    display:grid;
+
+    gap:1rem;
+
+    align-items:start;
+
+    transition:all .3s ease;
+
+}
+
+/* ================= SIGN → TEXT ================= */
+
+.signMainGrid{
+
+    grid-template-columns:1.7fr 1fr;
+
+}
+
+/* ================= TEXT → SIGN ================= */
+
+.textMainGrid{
+
+    grid-template-columns:1.3fr 1fr;
+
+}
+
+
+
+/* ================= BOTTOM GRID ================= */
+.bottomGrid{
+
+    display:grid;
+
+    gap:1rem;
+
+    align-items:start;
+
+    transition:all .35s ease;
+
+}
+
+.signModeGrid{
+
+    grid-template-columns:1.7fr 1fr;
+
+}
+
+.textModeGrid{
+
+    grid-template-columns:1.02fr 0.8fr;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* ================= DARK MODE ================= */
+
+:global(body.dark) .pageTitle {
+    color: white;
+}
+
+:global(body.dark) .subtitle {
+    color: #9ca3af;
+}
+
+:global(body.dark) .footer {
+    color: #9ca3af;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+
+    .mainGrid,
+    .bottomGrid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 1rem;
+    }
+
+    .pageTitle {
+        font-size: 2rem;
+    }
+
+}
+
+.fadeIn{
+
+    animation:fadeIn .25s ease;
+
+}
+
+.fadeOut{
+
+    animation:fadeOut .2s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}

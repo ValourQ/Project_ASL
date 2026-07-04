@@ -1,0 +1,608 @@
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--card-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+    height: 560px;
+    
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:1rem;
+
+    padding:1.25rem 1.5rem;
+
+    border-bottom:1px solid var(--border-color);
+
+    flex-shrink:0;
+
+}
+
+.headerTitle{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.9rem;
+
+    flex:1;
+
+}
+
+.iconBox{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(97,90,246,.10);
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.iconBox svg{
+
+    width:24px;
+
+    height:24px;
+
+}
+
+.headerTitle h3{
+
+    margin:0;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+/* =====================================================
+   VIEW ALL BUTTON
+===================================================== */
+
+.viewAll{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.45rem;
+
+    padding:.6rem 1rem;
+
+    border-radius:999px;
+
+    border:1px solid rgba(97,90,246,.18);
+
+    background:#f8f7ff;
+
+    color:var(--primary);
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.viewAll:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================================
+   SCROLLABLE LIST
+===================================================== */
+
+.list{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.65rem;
+
+    padding:.9rem;
+
+    overflow-y:auto;
+
+   
+
+}
+
+/* =====================================================
+SCROLLBAR
+===================================================== */
+
+.list::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.list::-webkit-scrollbar-track{
+
+    background:#eef2ff;
+    border-radius:999px;
+
+}
+
+.list::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        180deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    border-radius:999px;
+
+}
+
+.list::-webkit-scrollbar-thumb:hover{
+
+    background:linear-gradient(
+        180deg,
+        #47b7f0,
+        #746dff
+    );
+
+}
+
+.list::-webkit-scrollbar-thumb:active{
+
+    background:linear-gradient(
+        180deg,
+        #2fa7db,
+        #615af6
+    );
+
+}
+
+
+/* =====================================================
+   FIREFOX
+===================================================== */
+
+.list{
+
+    scrollbar-width:auto;
+
+    scrollbar-color:var(--primary) transparent;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+:global(body.dark) .list::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+:global(body.dark) .list::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        180deg,
+        #4fc3ff,
+        #7b74ff
+    );
+
+    border:2px solid #111827;
+
+    background-clip:padding-box;
+
+}
+
+:global(body.dark) .list::-webkit-scrollbar-thumb:hover{
+
+    background:linear-gradient(
+        180deg,
+        #67ccff,
+        #918cff
+    );
+
+}
+
+:global(body.dark) .list{
+
+    scrollbar-color:#7b74ff transparent;
+
+}
+/* =====================================================
+   ITEM
+===================================================== */
+
+.item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.8rem;
+
+    padding:0.5rem;
+
+    border-radius:18px;
+
+    background:var(--bg-color);
+
+    border:1px solid transparent;
+
+    transition:.25s;
+
+    flex-shrink:0;
+
+}
+
+.item:hover{
+
+    transform:translateY(-2px);
+
+    border-color:rgba(97,90,246,.22);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* =====================================================
+   TOP ROW
+===================================================== */
+
+.itemTop{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+.time{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.45rem;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    color:var(--text-secondary);
+
+}
+
+.time svg{
+
+    color:var(--primary);
+
+}
+
+.accuracy{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.35rem .8rem;
+
+    border-radius:999px;
+
+    background:#eef7ff;
+
+    color:#2fa7db;
+
+    font-size:.76rem;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+/* =====================================================
+   SIGN LABEL
+===================================================== */
+
+.item h4{
+
+    margin:0;
+
+    width:fit-content;
+
+    padding:.55rem 1rem;
+
+    border-radius:999px;
+
+    background:rgba(97,90,246,.12);
+
+    color:var(--primary);
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+}
+
+/* =====================================================
+   BOTTOM ROW
+===================================================== */
+
+.itemBottom{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:auto;
+
+}
+
+.source{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.45rem;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    color:var(--text-secondary);
+    
+}
+
+.source svg{
+
+    color:var(--primary);
+
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:1rem;
+
+    padding:2rem;
+
+    color:var(--text-secondary);
+
+}
+
+.empty svg{
+
+    color:var(--primary);
+
+    opacity:.6;
+
+}
+
+.empty h4{
+
+    margin:0;
+
+    color:var(--text-primary);
+
+}
+
+.empty p{
+
+    margin:0;
+
+    max-width:240px;
+
+    line-height:1.6;
+
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+:global(body.dark) .iconBox{
+
+    background:rgba(97,90,246,.15);
+
+}
+
+:global(body.dark) .viewAll{
+
+    background:#141d30;
+
+    border-color:#2d3f5c;
+
+}
+
+:global(body.dark) .viewAll:hover{
+
+    background:var(--primary);
+
+}
+
+:global(body.dark) .item{
+
+    background:#101826;
+
+}
+
+:global(body.dark) .item:hover{
+
+    background:#182234;
+
+}
+
+:global(body.dark) .accuracy{
+
+    background:rgba(47,167,219,.15);
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .card{
+
+        height:auto;
+
+    }
+
+    .list{
+
+        max-height:none;
+
+        overflow:visible;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:1rem;
+
+    }
+
+    .viewAll{
+
+        align-self:flex-start;
+
+    }
+
+    .itemTop{
+
+        flex-direction:column;
+
+        gap:.6rem;
+
+    }
+
+    .accuracy{
+
+        align-self:flex-start;
+
+    }
+
+    .itemBottom{
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .header{
+
+        padding:1rem;
+
+    }
+
+    .list{
+
+        padding:.8rem;
+
+    }
+
+    .item{
+
+        padding:.9rem;
+
+    }
+
+    .headerTitle h3{
+
+        font-size:1rem;
+
+    }
+
+}

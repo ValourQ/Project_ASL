@@ -1,0 +1,155 @@
+
+/* ================= TIPS CARD ================= */
+
+.tipsCard{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+    background:white;
+
+    padding:1rem 1.5rem;
+
+    border-radius:24px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.tipsCard:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ================= ICON ================= */
+
+.tipsIcon{
+
+    width:60px;
+
+    height:60px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #2fa7db,
+        #615af6
+    );
+
+    color:white;
+
+}
+
+.tipsIcon svg{
+
+    width:24px;
+
+    height:24px;
+
+}
+
+/* ================= CONTENT ================= */
+
+.tipsContent{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.5rem;
+
+}
+
+.tipsContent h3{
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.tipsContent p{
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+}
+
+/* ================= DARK MODE ================= */
+
+:global(body.dark) .tipsCard{
+
+    background:#1f2937;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,.3),
+        inset 0 1px 1px rgba(255,255,255,.08);
+
+}
+
+:global(body.dark) .tipsContent h3{
+
+    color:white;
+
+}
+
+:global(body.dark) .tipsContent p{
+
+    color:#9ca3af;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .tipsCard{
+
+        align-items:flex-start;
+
+        padding:1.5rem;
+
+    }
+
+    .tipsIcon{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+    .tipsContent h3{
+
+        font-size:1.1rem;
+
+    }
+
+    .tipsContent p{
+
+        font-size:.95rem;
+
+    }
+
+}
+

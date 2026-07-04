@@ -1,0 +1,199 @@
+/* ==========================================
+   TRANSLATOR TOGGLE
+========================================== */
+
+.toggleContainer{
+
+    position:relative;
+
+    width:fit-content;
+
+    margin:auto;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:0;
+
+    padding:.4rem;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        #2fa7db,
+        #615af6
+    );
+
+    box-shadow:
+        0 10px 30px rgba(47,167,219,.18);
+
+}
+
+/* ==========================================
+   MODE BUTTONS
+========================================== */
+
+.modeButton{
+
+    min-width:190px;
+
+    padding:1rem 2.2rem;
+
+    border-radius:999px;
+
+    background:transparent;
+
+    color:rgba(255,255,255,.65);
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:all .35s ease;
+
+    user-select:none;
+
+}
+
+/* Active */
+
+.active{
+
+    color:white;
+
+}
+
+/* No hover effect */
+
+.modeButton:hover{
+
+    color:inherit;
+
+    cursor:default;
+
+}
+
+/* ==========================================
+   CENTER BUTTON
+========================================== */
+
+.switchButton{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#615af6;
+
+    z-index:5;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.12);
+
+
+}
+
+/* Rotation */
+
+.switchButton.rotate{
+
+    transform:
+        translate(-50%,-50%)
+        rotate(180deg);
+
+}
+
+/* Hover */
+
+.switchButton:hover{
+
+    box-shadow:
+        0 12px 28px rgba(97,90,246,.18);
+
+}
+
+/* Click */
+
+.switchButton:active{
+
+    transform:
+        translate(-50%,-50%)
+        scale(.96);
+
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark) .toggleContainer{
+
+    background:linear-gradient(
+        135deg,
+        #2fa7db,
+        #615af6
+    );
+
+}
+
+:global(body.dark) .switchButton{
+
+    background:#1b2334;
+
+    color:white;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .modeButton{
+
+        min-width:130px;
+
+        padding:.85rem 1rem;
+
+        font-size:.9rem;
+
+    }
+
+    .switchButton{
+
+        width:56px;
+
+        height:56px;
+
+
+    }
+
+}

@@ -1,0 +1,439 @@
+/* =====================================================
+   ANALYTICS CARD
+===================================================== */
+
+.card{
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--card-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:.75rem 1rem 1rem;
+    height:560px;
+    overflow:hidden;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    width:100%;
+
+    padding:.55rem .25rem .95rem;
+
+    border-bottom:1px solid var(--border-color);
+
+}
+
+.headerInfo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    flex:1;
+
+}
+
+.titleGroup{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.titleGroup h3{
+
+    margin:0;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+    line-height:1.2;
+
+}
+
+.titleGroup p{
+
+    margin:.35rem 0 0;
+
+    font-size:1rem;
+
+    color:var(--text-secondary);
+
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.iconBox{
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(97,90,246,.10);
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.iconBox svg{
+
+    width:32px;
+
+    height:32px;
+
+}
+
+
+/* =====================================================
+   LIVE BADGE
+===================================================== */
+
+.liveBadge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.55rem;
+
+    padding:.65rem 1rem;
+
+    border-radius:999px;
+
+    background:#edf9ef;
+
+    color:#2e7d32;
+
+    font-size:.88rem;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+.liveDot{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#43a047;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:0 0 0 0 rgba(67,160,71,.45);
+
+    }
+
+    70%{
+
+        box-shadow:0 0 0 10px rgba(67,160,71,0);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 0 rgba(67,160,71,0);
+
+    }
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:.9rem;
+
+    padding:1rem .25rem .25rem;
+
+}
+
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.statCard{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:.55rem;
+
+    min-height:170px;
+
+    padding:1.2rem;
+
+    border-radius:20px;
+
+    background:var(--bg-color);
+
+    transition:all .25s ease;
+
+}
+
+.statCard:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+/* =====================================================
+   INNER ICON
+===================================================== */
+
+.icon{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color:white;
+
+}
+
+.icon svg{
+
+    width:26px;
+
+    height:26px;
+
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.title{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:var(--text-secondary);
+
+}
+
+.statCard h2{
+
+    margin:0;
+
+    font-size:1.8rem;
+
+    font-weight:800;
+
+    line-height:1;
+
+    color:var(--text-primary);
+
+}
+
+.statCard small{
+
+    font-size:.9rem;
+
+    color:var(--text-secondary);
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+:global(body.dark) .statCard{
+
+    background:#101826;
+
+}
+
+:global(body.dark) .statCard:hover{
+
+    background:#182234;
+
+}
+
+:global(body.dark) .liveBadge{
+
+    background:rgba(76,175,80,.15);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1200px){
+
+    .grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:1rem;
+
+    }
+
+    .liveBadge{
+
+        align-self:flex-start;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .statCard{
+
+        min-height:150px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .card{
+
+        padding:.75rem;
+
+    }
+
+    .header{
+
+        padding:.4rem 0 .8rem;
+
+    }
+
+    .titleGroup h3{
+
+        font-size:1.45rem;
+
+    }
+
+    .titleGroup p{
+
+        font-size:.9rem;
+
+    }
+
+    .grid{
+
+        gap:.75rem;
+
+        padding:.9rem 0 0;
+
+    }
+
+    .statCard{
+
+        min-height:140px;
+
+        padding:1rem;
+
+    }
+
+    .statCard h2{
+
+        font-size:1.8rem;
+
+    }
+
+}

@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Inter, sans-serif;
+    line-height:1.6;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition:background .4s ease, color .4s ease;
+}
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+:root{
+    /* LIGHT MODE */
+    --bg-color:#f8fafc;
+
+    --card-color:#ffffff;
+
+    --text-color:#1e293b;
+
+    --secondary-text:#6B7280;
+
+    --border-color:#e5e7eb;
+    --card-bg:#ffffff;
+    --text-primary:#1f2937;
+    --text-secondary:#6b7280;
+    --tag-bg:rgba(0,0,0,.08);
+    --camera-overlay:#d8d8d8;
+        /* Brand Colors */
+    --primary:#615AF6;
+    --secondary:#2FA7DB;
+
+    /* Status Colors */
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    /* Shadows */
+    --shadow:0 8px 25px rgba(15,23,42,.06);
+    --shadow-hover:0 12px 35px rgba(15,23,42,.10);
+
+    /* Radius */
+    --radius:20px;
+
+    /* Transitions */
+    --transition:all .3s ease;
+}
+
+
+body.dark{
+
+    --bg-color:
+
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(47,167,219,.25),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 85% 10%,
+        rgba(97,90,246,.25),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(47,167,219,.15),
+        transparent 40%
+    ),
+
+    linear-gradient(
+        180deg,
+        #081120,
+        #111827
+    );
+
+
+    --card-color:
+    rgba(15,23,42,.55);
+
+    --text-color:#F8FAFC;
+
+    --secondary-text:#94A3B8;
+
+    --border-color:rgba(255,255,255,.18);
+
+    --card-bg:#1e1e2f;
+    --text-primary:#f3f4f6;
+    --text-secondary:#b0b3c1;
+    --tag-bg:rgba(255,255,255,.08);
+    --camera-overlay:#cfd3e0;
+        /* Brand Colors */
+    --primary:#7B74FF;
+    --secondary:#45B6E7;
+
+    /* Status Colors */
+    --success:#22C55E;
+    --warning:#FBBF24;
+    --danger:#F87171;
+
+    /* Shadows */
+    --shadow:0 8px 35px rgba(0,0,0,.35);
+    --shadow-hover:0 12px 45px rgba(0,0,0,.45);
+
+    /* Radius */
+    --radius:20px;
+
+    /* Transition */
+    --transition:all .3s ease;
+}
+

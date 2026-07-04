@@ -13,8 +13,11 @@
     "@mediapipe/camera_utils": "^0.3.1675466862",
     "@mediapipe/hands": "^0.4.1675469240",
     "@supabase/supabase-js": "^2.105.1",
+    "lucide-react": "^1.18.0",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.17.0",
+    "react-webcam": "^7.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -1,0 +1,313 @@
+/* ==========================================
+   ASSISTANT CARD
+========================================== */
+
+.card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:1.5rem;
+
+    padding:1.35rem 1.5rem;
+
+    background:var(--card-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        opacity .3s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1.25rem;
+
+    flex:1;
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.icon{
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color:white;
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.45rem;
+
+    flex:1;
+
+}
+
+.content h3{
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.content p{
+
+    font-size:1rem;
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+   TOP ROW
+========================================== */
+
+.topRow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:1rem;
+
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.45rem;
+
+    padding:.45rem .85rem;
+
+    border-radius:999px;
+
+    background:#ecfdf5;
+
+    color:#16a34a;
+
+    font-size:.82rem;
+
+    font-weight:600;
+    
+
+}
+
+.status svg{
+
+    width:14px;
+
+    height:14px;
+
+}
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+.closeButton{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:transparent;
+
+    color:var(--text-secondary);
+
+    flex-shrink:0;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+.closeButton:hover{
+
+    background:rgba(0,0,0,.06);
+
+    color:var(--text-primary);
+
+    transform:rotate(90deg);
+
+}
+
+.closeButton:active{
+
+    transform:scale(.92);
+
+}
+
+
+/* ================= RIGHT SIDE ================= */
+
+.rightSection{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+    align-self:center;
+
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark) .card{
+
+    background:var(--card-color);
+
+    border-color:var(--border-color);
+
+}
+
+:global(body.dark) .status{
+
+    background:rgba(34,197,94,.15);
+
+    color:#4ade80;
+
+}
+
+:global(body.dark) .closeButton:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .card{
+
+        padding:1.1rem;
+
+        gap:1rem;
+
+    }
+
+    .left{
+
+        gap:1rem;
+
+    }
+
+    .icon{
+
+        width:54px;
+
+        height:54px;
+
+        border-radius:16px;
+
+    }
+
+    .content h3{
+
+        font-size:1.1rem;
+
+    }
+
+    .content p{
+
+        font-size:.9rem;
+
+    }
+
+    .topRow{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:.5rem;
+
+    }
+
+}

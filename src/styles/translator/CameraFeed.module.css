@@ -1,0 +1,884 @@
+/* ======================================================
+   CAMERA CARD
+====================================================== */
+
+.card{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+
+    background:var(--card-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius); 
+
+    box-shadow:var(--shadow);
+
+    padding:1.15rem;
+
+    height: 100%;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.title{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+}
+
+.title svg{
+    color:var(--primary);
+}
+
+.title h3{
+    font-size:1.45rem;
+    font-weight:700;
+    color:var(--text-primary);
+}
+
+.title p{
+    font-size:1rem;
+    color:var(--text-secondary);
+}
+
+.iconBox{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(97,90,246,.10);
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.iconBox svg{
+
+    width:24px;
+
+    height:24px;
+
+}
+
+/* ======================================================
+   SEGMENTED INPUT MODES
+====================================================== */
+
+.inputModes{
+
+    display:flex;
+
+    background:var(--bg-color);
+
+    border-radius:12px;
+
+    padding:.3rem;
+
+    gap:.3rem;
+
+}
+
+.modeButton{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:.45rem;
+
+    padding:.68rem .8rem;
+
+    border-radius:9px;
+
+    background:transparent;
+
+    color:var(--text-secondary);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.modeButton:hover{
+
+    color:var(--primary);
+
+}
+
+.active{
+
+    background:var(--card-color);
+
+    color:var(--primary);
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+/* ======================================================
+   INNER CAMERA CARD
+====================================================== */
+
+.cameraContainer{
+
+    position:relative;
+
+    background:var(--bg-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:18px;
+
+    padding:1rem;
+
+    min-height:0;
+
+    overflow:visible;
+
+}
+
+.cameraContainer:fullscreen{
+
+    width:100vw;
+
+    height:100vh;
+
+    border:0;
+
+    border-radius:0;
+
+    padding:1.5rem;
+
+    background:#0f172a;
+
+}
+
+/* ======================================================
+   STATUS BAR
+====================================================== */
+
+.statusBar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:1rem;
+
+}
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.45rem;
+
+    padding:.45rem .8rem;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+}
+
+.live{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22c55e;
+
+}
+
+.detecting{
+
+    background:rgba(97,90,246,.15);
+
+    color:var(--primary);
+
+}
+
+.offline{
+
+    background:rgba(239,68,68,.15);
+
+    color:#ef4444;
+
+}
+
+.fps{
+
+    padding:.45rem .8rem;
+
+    border-radius:999px;
+
+    background:var(--card-color);
+
+    color:var(--text-secondary);
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+   PREVIEW
+====================================================== */
+
+.preview{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:280px;
+
+    border-radius:16px;
+
+    overflow:visible;
+
+    background:var(--camera-overlay);
+    padding:1rem;
+
+}
+
+.uploadPreview{
+
+    min-height:420px;
+
+    height:auto;
+
+    padding:1.25rem;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.cameraContainer:fullscreen .preview{
+
+    height:calc(100vh - 170px);
+
+    background:#111827;
+
+}
+
+.webcam{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.previewVideo,.previewImage{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+}
+
+.videoWrapper,.imageWrapper{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.removePreview{
+
+    position:absolute;
+
+    top:16px;
+    right: 0px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(15,23,42,.75);
+
+    backdrop-filter:blur(12px);
+
+    color:white;
+
+    z-index:10;
+
+    transition:.25s;
+
+}
+
+.removePreview:hover{
+
+    transform:scale(1.08);
+
+    background:#ef4444;
+
+}
+
+/* ======================================================
+   PLACEHOLDER
+====================================================== */
+
+.placeholder{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:1rem;
+
+    height:100%;
+
+}
+
+.placeholder svg{
+
+    color:var(--text-secondary);
+
+    opacity:.65;
+
+}
+
+.placeholder h2{
+
+    color:var(--text-primary);
+
+    font-size:1.45rem;
+
+}
+
+.placeholder p{
+
+    color:var(--text-secondary);
+
+    line-height:1.5;
+
+}
+
+/* ======================================================
+   FEATURES
+====================================================== */
+
+.supportedSection{
+
+    margin-top:1.25rem;
+
+    padding-top:1rem;
+
+    border-top:1px solid var(--border-color);
+
+}
+
+.supportedSection h4{
+
+    text-align:center;
+
+    font-size:.92rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+    margin-bottom:1rem;
+
+}
+
+.features{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:2rem;
+
+    flex-wrap:wrap;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.45rem;
+
+    color:var(--text-secondary);
+
+    font-size:.9rem;
+
+}
+
+.feature svg{
+
+    color:#22c55e;
+
+}
+
+/* ======================================================
+   OVERLAY BUTTONS
+====================================================== */
+
+.overlayButtons{
+
+    position:absolute;
+
+    right:1.4rem;
+
+    bottom:1.4rem;
+
+    display:flex;
+
+    gap:.75rem;
+
+}
+
+.overlayButton{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+    transition:var(--transition);
+    
+
+}
+
+.overlayButton:hover{
+    background: linear-gradient(135deg,  var(--secondary),
+        var(--primary));
+    transform:translateY(-2px);
+
+}
+
+.overlayButtonActive{
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color:white;
+
+}
+
+/* ======================================================
+   SETTINGS PANEL
+====================================================== */
+
+.settingsPanel{
+
+    position:absolute;
+
+    right:1.5rem;
+
+    bottom:5.5rem;
+
+    width:280px;
+
+    padding:1rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+    background:var(--card-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:18px;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+
+    z-index:999;
+
+}
+
+.setting{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.45rem;
+
+}
+
+.setting label{
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    color:var(--text-primary);
+
+}
+
+.settingsPanel{
+
+    animation:fadeUp .25s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+.setting input[type="range"]{
+
+    width:100%;
+
+    min-width:88px;
+
+    accent-color:var(--primary);
+
+}
+
+.toggleSetting{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:.75rem;
+
+    margin-top:.5rem;
+
+    padding:.85rem 1rem;
+
+    border-radius:12px;
+
+    background:var(--bg-color);
+
+    border:1px solid var(--border-color);
+
+    cursor:pointer;
+
+}
+
+.toggleSetting input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+
+}
+
+.toggleSetting span{
+
+    flex:1;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    color:var(--text-primary);
+
+}
+
+.cameraContainer:fullscreen .settingsPanel{
+
+    background:rgba(15,23,42,.88);
+
+    border-color:rgba(255,255,255,.14);
+
+}
+
+.cameraContainer:fullscreen .setting label,
+.cameraContainer:fullscreen .toggleSetting{
+
+    color:white;
+
+}
+
+/* ======================================================
+   CONTROLS
+====================================================== */
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+    margin-top:1.25rem;
+
+    padding:0 1rem;
+
+}
+
+.startButton,
+
+.stopButton{
+
+    width:min(220px,100%);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:.6rem;
+
+    padding:.85rem;
+
+    border-radius:14px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.startButton{
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+    color:white;
+
+}
+
+.stopButton{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+.startButton:hover,
+
+.stopButton:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* ======================================================
+   DARK MODE
+====================================================== */
+
+:global(body.dark) .cameraContainer{
+
+    background:#101826;
+
+}
+
+:global(body.dark) .preview{
+
+    background:#1b2536;
+
+}
+
+:global(body.dark) .overlayButton{
+
+    background:rgba(15,23,42,.85);
+
+    color:white;
+
+}
+
+:global(body.dark) .fps{
+
+    background:rgba(15,23,42,.85);
+
+}
+
+:global(body.dark) .settingsPanel{
+
+    background:rgba(15,23,42,.72);
+
+}
+
+:global(body.dark) .overlayButton:hover{
+    background: linear-gradient(135deg, var(--secondary),
+        var(--primary) ); }
+
+:global(body.dark) .toggleSetting{
+
+    background:#101826;
+    
+
+}
+
+:global(body.dark) .active{
+
+    background:#273245;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:900px){
+
+    .inputModes{
+
+        flex-wrap:wrap;
+
+    }
+
+    .settingsPanel{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cameraContainer{
+
+        padding:.85rem;
+
+    }
+
+    .preview{
+
+        height:240px;
+
+    }
+
+    .settingsPanel{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .setting{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:.45rem;
+
+    }
+
+    .startButton,
+
+    .stopButton{
+
+        width:100%;
+
+    }
+
+}
