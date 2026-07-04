@@ -1,15 +1,49 @@
-# Python
+# =========================
+# Backend (Python)
+# =========================
 backend/venv/
 backend/__pycache__/
-*.pyc
-
-# Environment variables
+backend/**/*.pyc
 backend/.env
+
+# =========================
+# Frontend (React/Vite)
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
 frontend/.env
 
-# Node
-frontend/node_modules/
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# macOS/Windows
+# =========================
+# OS Files
+# =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# IDEs
+# =========================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# =========================
+# Misc
+# =========================
+*.local
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
