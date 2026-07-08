@@ -1,4 +1,6 @@
 import { ArrowLeftRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 import styles from "../../styles/translator/TranslatorToggle.module.css";
 
 function TranslatorToggle({
@@ -10,19 +12,26 @@ function TranslatorToggle({
 
 }) {
 
+    const navigate = useNavigate();
+
     const handleSwap = () => {
 
         setAnimating(true);
 
+        const nextMode =
+            sourceMode === "sign"
+                ? "text"
+                : "sign";
+
         setTimeout(() => {
 
-            setSourceMode(prev =>
-                prev === "sign" ? "text" : "sign"
-            );
+            setSourceMode(nextMode);
+
+            navigate(`/translator/${nextMode}`);
 
             setAnimating(false);
 
-        }, 250);
+        },250);
 
     };
 
@@ -30,33 +39,61 @@ function TranslatorToggle({
 
         <div className={styles.toggleContainer}>
 
-            {/* Left Side */}
+            {/* Sign → Text */}
 
             <button
                 className={`${styles.modeButton} ${
-                    sourceMode === "sign" ? styles.active : ""
+                    sourceMode === "sign"
+                        ? styles.active
+                        : ""
                 }`}
+                onClick={() => {
+
+                    if(sourceMode !== "sign"){
+
+                        setSourceMode("sign");
+
+                        navigate("/translator/sign");
+
+                    }
+
+                }}
             >
                 Sign → Text
             </button>
 
-            {/* Swap Button */}
+            {/* Swap */}
 
             <button
                 className={`${styles.switchButton} ${
-                    animating ? styles.rotate : ""
+                    animating
+                        ? styles.rotate
+                        : ""
                 }`}
                 onClick={handleSwap}
             >
                 <ArrowLeftRight size={24}/>
             </button>
 
-            {/* Right Side */}
+            {/* Text → Sign */}
 
             <button
                 className={`${styles.modeButton} ${
-                    sourceMode === "text" ? styles.active : ""
+                    sourceMode === "text"
+                        ? styles.active
+                        : ""
                 }`}
+                onClick={() => {
+
+                    if(sourceMode !== "text"){
+
+                        setSourceMode("text");
+
+                        navigate("/translator/text");
+
+                    }
+
+                }}
             >
                 Text → Sign
             </button>

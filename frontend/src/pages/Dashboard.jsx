@@ -2,20 +2,14 @@ import AppLayout from "../components/layout/AppLayout";
 import "../styles/Dashboard.css";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-import {
-Hand,
-Type,
-GraduationCap,
-MessageCircle,
-Sparkles
-} from "lucide-react";
-
+import {Hand,Type,BookmarkCheck,GraduationCap,MessageCircle,Sparkles} from "lucide-react";
 import QuickActionCard from "../components/dashboard/QuickActionCard";
 import SessionCard from "../components/dashboard/SessionCard";
 import ActivityOverview from "../components/dashboard/ActivityOverview";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
-
+  const navigate = useNavigate();
 return (
 
 
@@ -42,28 +36,28 @@ return (
 
     <div className="quick-actions">
 
-      <QuickActionCard
-        icon={<Hand size={34} />}
+          <QuickActionCard
+        icon={<Hand size={34}/>}
         title="Sign → Text"
         description="Convert sign language to text in real-time."
-        route="/sign-to-text"
-      />
+        onClick={() => navigate("/translator/sign")}
+    />
 
-      <QuickActionCard
-        icon={<Type size={34} />}
+    <QuickActionCard
+        icon={<Type size={34}/>}
         title="Text → Sign"
         description="Convert text into sign language."
-        route="/text-to-sign"
-      />
+        onClick={() => navigate("/translator/text")}
+    />
 
-      <QuickActionCard
-        icon={<GraduationCap size={34} />}
-        title="Practice Mode"
-        description="Learn and practice sign language."
-        route="/practice"
-      />
+    <QuickActionCard
+        icon={<BookmarkCheck size={34}/>}
+        title="Saved"
+        description="Access your saved translations and favorite sessions."
+        onClick={() => navigate("/saved")}
+    />
 
-    </div>
+  </div>
 
     <div className="dashboard-bottom">
 

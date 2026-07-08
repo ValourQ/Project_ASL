@@ -10,6 +10,7 @@ import RecentPredictions from "../components/translator/RecentPredictions";
 import TextInput from "../components/translator/TextInput";
 import AvatarPreview from "../components/translator/AvatarPreview";
 import styles from "../styles/translator/Translator.module.css";
+import { useParams } from "react-router-dom";
 
 function Translator() {
     /*============Translator=========*/
@@ -37,7 +38,18 @@ function Translator() {
 
     /* ================= MODE ================= */
 
-    const [sourceMode, setSourceMode] = useState("sign");
+    const { mode } = useParams();
+    const [sourceMode, setSourceMode] = useState(
+    mode === "text" ? "text" : "sign");
+    useEffect(() => {
+
+        setSourceMode(
+            mode === "text"
+                ? "text"
+                : "sign"
+        );
+
+    }, [mode]);
     const [animating, setAnimating] = useState(false);
 
     const targetMode = sourceMode === "sign" ? "text" : "sign";

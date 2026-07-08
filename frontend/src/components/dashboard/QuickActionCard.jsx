@@ -1,36 +1,54 @@
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 function QuickActionCard({
-  icon,
-  title,
-  description,
-  route
+
+    icon,
+
+    title,
+
+    description,
+
+    onClick
+
 }) {
 
-  const navigate = useNavigate();
+    return (
 
-  return (
-    <div className="quick-action-card">
+        <div className="quick-action-card">
 
-      <div className="card-icon">
-        {icon}
-      </div>
+            <div className="card-icon">
 
-      <h2>{title}</h2>
+                {icon}
 
-      <p>{description}</p>
+            </div>
 
-      <button
-        className="start-btn"
-        onClick={() => navigate(route)}
-      >
-        Start
-        <ArrowRight size={18}/>
-      </button>
+            <h2>
 
-    </div>
-  );
+                {title}
+
+            </h2>
+
+            <p>
+
+                {description}
+
+            </p>
+
+            <button
+                className="start-btn"
+                onClick={onClick}
+            >
+
+                Start
+
+                <ArrowRight size={18}/>
+
+            </button>
+
+        </div>
+
+    );
+
 }
 
 export default QuickActionCard;

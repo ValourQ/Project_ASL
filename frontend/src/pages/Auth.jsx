@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import supabase from "../supabase";
 import logo from "../assets/signsync-logo.png";
 import "../styles/Auth.css";
 import { Eye, EyeOff } from "lucide-react"; //eye icon
 export default function Auth({ onLogin }) {
+  const navigate = useNavigate();
   const [mode, setMode] = useState("signin");
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -117,16 +119,18 @@ export default function Auth({ onLogin }) {
         } else if (
           error.message.includes("Email not confirmed")
         ) {
-          setError("Please verify your email before signing in.");
+          setError("A verification email has been sent to your inbox.");
         } else {
-          setError("Something went wrong. Please try again.");
-        }
+            console.error("Supabase Error:", error);
+            setError(error.message);
+          }
       } else {
-        onLogin(data.user);
+        navigate("/dashboard");
       }
     } catch (err) {
-      setError("Something went wrong. Please try again.");
-    }
+  console.error("Catch Error:", err);
+  setError(err.message || JSON.stringify(err));
+}
 
     setLoading(false);
   };

@@ -8,4 +8,12 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 UPLOAD_FOLDER = "uploads"
 
-MODEL_PATH = "ml/random_forest.pkl"
+MODEL_PATH = "ml/models/random_forest.pkl"
+
+ALLOWED_IMAGE_TYPES = {
+    "image/jpeg",
+    "image/png",
+    "image/jpg"
+}
+
+MAX_FILE_SIZE = 5 * 1024 * 1024
