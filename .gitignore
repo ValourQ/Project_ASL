@@ -47,3 +47,16 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+# =========================
+# Datasets
+# =========================
+datasets/
+*.npz
+*.h5
+*.keras
+*.pth
+*.pt
+*.ckpt
+
+
+.ipynb_checkpoints/

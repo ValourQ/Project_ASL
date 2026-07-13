@@ -9,12 +9,22 @@ html{
 }
 
 body{
-    font-family: Inter, sans-serif;
+    font-family:Inter,sans-serif;
     line-height:1.6;
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition:background .4s ease, color .4s ease;
+
+    background:var(--bg-color);
+
+    color:var(--text-color);
+
+    transition:
+        background .4s ease,
+        color .4s ease;
+
+    position:relative;
+
+    overflow-x:hidden;
 }
+
 ul{
     list-style:none;
 }
@@ -37,41 +47,121 @@ img{
 }
 
 :root{
-    /* LIGHT MODE */
-    --bg-color:#f8fafc;
 
-    --card-color:#ffffff;
+    /* ===========================
+       LIGHT GLASSMORPHISM
+    =========================== */
 
-    --text-color:#1e293b;
+    /* Background */
 
-    --secondary-text:#6B7280;
+    --bg-color:
 
-    --border-color:#e5e7eb;
-    --card-bg:#ffffff;
-    --text-primary:#1f2937;
-    --text-secondary:#6b7280;
-    --tag-bg:rgba(0,0,0,.08);
-    --camera-overlay:#d8d8d8;
-        /* Brand Colors */
+        linear-gradient(
+        135deg,
+        rgba(255,255,255,.45),
+        transparent 45%
+        ),
+
+        radial-gradient(
+        circle at 8% 12%,
+        rgba(47,167,219,.22),
+        transparent 28%
+        ),
+
+        radial-gradient(
+        circle at 92% 15%,
+        rgba(97,90,246,.18),
+        transparent 30%
+        ),
+
+        radial-gradient(
+        circle at 82% 88%,
+        rgba(236,72,153,.14),
+        transparent 40%
+        ),
+
+        radial-gradient(
+        circle at 30% 92%,
+        rgba(47,167,219,.12),
+        transparent 38%
+        ),
+
+        linear-gradient(
+        180deg,
+        #FCFDFF,
+        #EEF3FF
+        );
+    /* Glass */
+
+    --card-color:
+    rgba(255,255,255,.42);
+
+    --card-bg:
+    rgba(255,255,255,.38);
+
+
+
+    /* Typography */
+
+    --text-color:#172033;
+
+    --text-primary:#172033;
+
+    --text-secondary:#64748B;
+
+    --secondary-text:#64748B;
+
+
+
+    /* Glass Border */
+
+    --border-color:
+    rgba(255,255,255,.82);
+
+
+
+    /* Brand */
+
     --primary:#615AF6;
+
     --secondary:#2FA7DB;
 
-    /* Status Colors */
+
+
+    /* Status */
+
     --success:#22C55E;
+
     --warning:#F59E0B;
+
     --danger:#EF4444;
 
+
+
     /* Shadows */
-    --shadow:0 8px 25px rgba(15,23,42,.06);
-    --shadow-hover:0 12px 35px rgba(15,23,42,.10);
 
-    /* Radius */
-    --radius:20px;
+    --shadow:
 
-    /* Transitions */
-    --transition:all .3s ease;
+    0 20px 45px rgba(20,20,40,.08),
+
+    0 8px 20px rgba(20,20,40,.04),
+
+    inset 0 1px 1px rgba(255,255,255,.95);
+
+
+
+    --shadow-hover:
+
+    0 30px 60px rgba(20,20,40,.12),
+
+    inset 0 1px 1px rgba(255,255,255,1);
+
+
+
+    --radius:26px;
+
+    --transition:all .35s ease;
 }
-
 
 body.dark{
 
@@ -136,3 +226,88 @@ body.dark{
     --transition:all .3s ease;
 }
 
+body::before,
+body::after{
+    content:"";
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    transition:.5s;
+}
+
+/* Blue Glow */
+
+body::before{
+
+    width:420px;
+    height:420px;
+
+    background:#2FA7DB;
+
+    opacity:.16;
+
+    top:-120px;
+    left:-100px;
+}
+
+/* Purple Glow */
+
+body::after{
+
+    width:380px;
+    height:380px;
+
+    background:#615AF6;
+
+    opacity:.14;
+
+    top:80px;
+    right:-120px;
+}
+
+/* Hide in Dark Mode */
+
+body.dark::before,
+body.dark::after{
+
+    display:none;
+
+}
+
+.bg-orb{
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    left:35%;
+
+    bottom:-220px;
+
+    border-radius:50%;
+
+    background:#A855F7;
+
+    opacity:.08;
+
+    filter:blur(140px);
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+body.dark .bg-orb{
+
+    display:none;
+
+}
