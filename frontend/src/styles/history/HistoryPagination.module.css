@@ -1,0 +1,143 @@
+.container {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageButton,
+.iconButton {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--card-color);
+
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius);
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow: var(--shadow);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pageButton:hover,
+.iconButton:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-hover);
+}
+
+.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.pageButton:disabled,
+.iconButton:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.pageButton:disabled:hover,
+.iconButton:disabled:hover {
+  background: var(--card-color);
+  color: var(--text-color);
+  box-shadow: var(--shadow);
+}
+
+.dots {
+  padding: 0 8px;
+  color: var(--secondary-text);
+  font-weight: 600;
+}
+
+.info {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+@media (max-width:768px){
+
+.container{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.pagination{
+    width:100%;
+    justify-content:center;
+}
+
+.info{
+    width:100%;
+    text-align:center;
+}
+
+}
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark-mode) .container {
+  background: transparent;
+}
+
+:global(body.dark-mode) .pageButton,
+:global(body.dark-mode) .iconButton {
+  background: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
+  box-shadow: none;
+}
+
+:global(body.dark-mode) .pageButton:hover,
+:global(body.dark-mode) .iconButton:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+:global(body.dark-mode) .active {
+  background: linear-gradient(135deg, #2979ff, #6c3cff);
+  color: white;
+  border-color: transparent;
+}
+
+:global(body.dark-mode) .pageButton:disabled,
+:global(body.dark-mode) .iconButton:disabled {
+  background: #1f2937;
+  color: #6b7280;
+  border-color: #374151;
+}
+
+:global(body.dark-mode) .pageButton:disabled:hover,
+:global(body.dark-mode) .iconButton:disabled:hover {
+  background: #1f2937;
+  color: #6b7280;
+}
+
+:global(body.dark-mode) .dots,
+:global(body.dark-mode) .info {
+  color: #cbd5e1;
+}

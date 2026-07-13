@@ -1,0 +1,418 @@
+/* ==========================================
+   TABLE WRAPPER
+========================================== */
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  border-radius: 18px;
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table thead {
+  background: #f8fafc;
+}
+
+.table th {
+  padding: 14px 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 14px 10px;
+  border-top: 1px solid #edf2f7;
+  font-size: 14px;
+  color: #374151;
+}
+
+.table tbody tr {
+  transition: .25s;
+  cursor: pointer;
+}
+
+.table tbody tr:hover {
+  background: #f8fbff;
+}
+
+/* ==========================================
+   TRANSLATION
+========================================== */
+
+.translation{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.translation h4{
+  margin:0;
+  font-size:16px;
+  font-weight:600;
+  color:#111827;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.translation span{
+  color:#9ca3af;
+  font-size:12px;
+}
+
+/* ==========================================
+   TYPE
+========================================== */
+
+.type {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #eef4ff;
+  color: #2979ff;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ==========================================
+   CONFIDENCE
+========================================== */
+
+.confidence {
+  display: inline-block;
+  padding: 7px 14px;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.actions{
+display:flex;
+align-items:center;
+gap:10px;
+position:relative;
+}
+
+.menuWrapper{
+position:relative;
+}
+
+.dropdown{
+position:absolute;
+top:42px;
+right:0;
+width:200px;
+background:#fff;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+padding:8px 0;
+z-index:100;
+}
+
+.dropdown button{
+width:100%;
+padding:12px 18px;
+display:flex;
+align-items:center;
+gap:12px;
+border:none;
+background:none;
+cursor:pointer;
+font-size:14px;
+}
+
+.dropdown button:hover{
+background:#f5f7fb;
+}
+
+.deleteItem{
+color:#ef4444;
+}
+
+.actionBtn{
+width:40px;
+height:40px;
+border-radius:10px;
+border:none;
+background:#f4f4f5;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+font-size:18px;
+transition:.3s;
+}
+
+.favorite{
+color:#f59e0b;
+}
+.savedBtn{
+    position:relative;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:10px;
+    background:#fef3c7;
+    color:#f59e0b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.savedBtn{
+    background:#fef3c7;
+    color:#f59e0b;
+}
+
+
+.savedBtn svg{
+    font-size:20px;
+}
+.actionBtn svg{
+    font-size:20px;
+}
+
+.checkIcon{
+    position:absolute;
+    right:-2px;
+    bottom:-2px;
+    font-size:12px;
+    color:#22c55e;
+    background:#ffffff;
+    border-radius:50%;
+}
+
+/* ==========================================
+   PAGINATION
+========================================== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pageBtn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+
+.pageBtn:hover {
+  background: #2979ff;
+  color: white;
+}
+
+.activePage {
+  background: linear-gradient(135deg,#2979ff,#6c3cff);
+  color: white;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark) .tableWrapper{
+    background:#1f2937;
+    border:1px solid #374151;
+}
+
+:global(body.dark) .table{
+    background:#1f2937;
+}
+
+:global(body.dark) .table thead{
+    background:#111827;
+}
+
+:global(body.dark) .table th{
+    color:#94a3b8;
+    border-bottom:1px solid #374151;
+}
+
+:global(body.dark) .table td{
+    color:#f3f4f6;
+    border-top:1px solid #374151;
+}
+
+/* Translation Title */
+:global(body.dark) .translation h4{
+    color:#ffffff !important;
+}
+
+/* ID Text */
+:global(body.dark) .translation span{
+    color:#94a3b8 !important;
+}
+
+/* Type Badge */
+:global(body.dark) .type{
+    background:rgba(59,130,246,.15);
+    color:#60a5fa;
+}
+
+/* Confidence Badge */
+:global(body.dark) .confidence{
+    background:rgba(16,185,129,.15);
+    color:#34d399;
+}
+
+/* Action Buttons */
+:global(body.dark) .actionBtn{
+    background:#374151;
+    color:#ffffff;
+}
+
+:global(body.dark) .actionBtn:hover{
+    background:#4b5563;
+}
+
+/* Dropdown */
+:global(body.dark) .dropdown{
+    background:#1f2937;
+    border:1px solid #374151;
+}
+
+:global(body.dark) .dropdown button{
+    color:#ffffff;
+}
+
+:global(body.dark) .dropdown button:hover{
+    background:#374151;
+}
+
+/* Showing Text */
+:global(body.dark) .showingText{
+    color:#94a3b8;
+}
+:global(body.dark) .savedBtn{
+    background:#3f3416;
+    color:#fbbf24;
+}
+
+:global(body.dark) .checkIcon{
+    background:#1f2937;
+    color:#22c55e;
+}
+:global(body.dark) .actionBtn{
+    color:#e5e7eb;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:992px){
+
+
+
+.translation img{
+width:60px;
+height:60px;
+}
+
+}
+
+@media (max-width:768px){
+
+
+
+.translation img{
+width:55px;
+height:55px;
+}
+
+.actionBtn{
+width:36px;
+height:36px;
+font-size:16px;
+}
+
+}
+
+@media (max-width:480px){
+
+
+
+.table th,
+.table td{
+padding:14px;
+}
+
+.translation{
+gap:10px;
+}
+
+.translation h4{
+font-size:14px;
+}
+
+}
+/* Placeholder Image */
+
+.placeholder{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#2979ff,#6c3cff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.table th:first-child,
+.table td:first-child{
+  width:35%;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2){
+  width:18%;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3){
+  width:15%;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4){
+  width:17%;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5){
+  width:15%;
+}
+
+.showingText {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #6b7280;
+}

@@ -1,0 +1,207 @@
+/* ==========================================
+   WRAPPER
+========================================== */
+
+.calendarWrapper {
+  position: relative;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.calendarButton {
+  width: 260px;
+  height: 50px;
+  background: #ffffff;
+  border: 2px solid #6c3cff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.calendarButton:hover {
+  background: linear-gradient(135deg, #2979ff, #6c3cff);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(108, 60, 255, 0.25);
+}
+
+.calendarButton:hover .calendarIcon {
+  color: white;
+}
+/* ==========================================
+   POPUP
+========================================== */
+
+.popup {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 340px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  z-index: 999;
+}
+
+.header {
+  background: linear-gradient(135deg, #2979ff, #6c3cff);
+  color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h3 {
+  color: white;
+  margin: 0;
+  font-size: 18px;
+}
+/* ==========================================
+   WEEK DAYS
+========================================== */
+
+.weekDays {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  margin-bottom: 10px;
+}
+
+.weekDay {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 10px 0;
+}
+
+/* ==========================================
+   DAYS
+========================================== */
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  gap: 8px;
+}
+
+.empty {
+  width: 38px;
+  height: 38px;
+}
+
+.day {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: .25s;
+  font-size: 14px;
+}
+
+.day:hover {
+  background: #dbeafe;
+}
+
+.selected {
+  background: linear-gradient(135deg, #2979ff, #6c3cff);
+  color: white;
+  border-radius: 50%;
+}
+
+.footer {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark) .calendarButton{
+    background:#1f2937;
+    color:#fff;
+    border:1px solid #374151;
+}
+
+:global(body.dark) .popup{
+    background:#1f2937;
+    border:1px solid #374151;
+}
+
+:global(body.dark) .weekDay{
+    color:#cbd5e1;
+}
+
+:global(body.dark) .day{
+    color:white;
+}
+
+:global(body.dark) .day:hover{
+    background:#334155;
+}
+
+:global(body.dark) .footer{
+    border-top:1px solid #374151;
+}
+
+:global(body.dark) .footerButton{
+    background:#334155;
+    color:white;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+.calendarButton{
+width:100%;
+}
+
+.popup{
+left:0;
+right:auto;
+width:100%;
+min-width:300px;
+}
+
+}
+
+@media (max-width:480px){
+
+.popup{
+padding:14px;
+}
+
+.day,
+.empty{
+width:34px;
+height:34px;
+}
+
+.header h3{
+font-size:16px;
+}
+
+.footerButton{
+padding:8px 14px;
+font-size:13px;
+}
+
+}

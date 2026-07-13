@@ -1,0 +1,483 @@
+/* ==========================================
+   TABLE WRAPPER
+========================================== */
+
+.tableWrapper {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 16px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table tbody tr {
+  transition: 0.25s;
+  cursor: pointer;
+  border-bottom: 1px solid #eef2f7;
+  height: 64px;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: #f8faff;
+}
+
+.selectedRow {
+  background: #eef4ff !important;
+}
+
+.table td {
+  padding: 20px 20px;
+  vertical-align: middle;
+}
+
+/* ==========================================
+   CONTENT COLUMN
+========================================== */
+
+.contentCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.image {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #e8eefc;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.time {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ==========================================
+   TAGS
+========================================== */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   TYPE BADGE
+========================================== */
+
+.type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   PREVIEW
+========================================== */
+
+.preview {
+  font-size: 15px;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* ==========================================
+   DATE
+========================================== */
+
+.date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.date span:first-child {
+  font-size: 14px;
+  font-weight: 400; /* Normal */
+  color: #374151;
+}
+
+.date span:last-child {
+  font-size: 12px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  position: relative;
+}
+
+.starBtn,
+.menuBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.starBtn svg,
+.menuBtn svg {
+  font-size: 20px;
+  color: #64748b;
+}
+
+.menuBtn:hover,
+.starBtn:hover {
+  background: #eef4ff;
+}
+.star{
+  color:#facc15 !important;
+  fill:#facc15 !important;
+  font-size:18px;
+}
+
+.starEmpty{
+  color:#facc15 !important;
+  font-size:18px;
+}
+
+/* ==========================================
+   DROPDOWN MENU
+========================================== */
+
+.dropdownMenu{
+  position:absolute;
+  top:40px;
+  right:0;
+  width:180px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  z-index:10;
+}
+
+.dropdownMenu button{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 16px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:#374151;
+}
+
+.dropdownMenu button:hover{
+  background:#f8fafc;
+}
+
+.deleteOption {
+  color: #ef4444 !important;
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+.tableWrapper{
+  position:relative;
+    z-index:50;
+}
+.tableWrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark) .tableWrapper {
+  background: #1f2937;
+  border: 1px solid #374151;
+}
+
+:global(body.dark) .table thead th {
+  color: #e2e8f0;
+  border-bottom: 1px solid #374151;
+}
+
+:global(body.dark) .table tbody tr {
+  border-bottom: 1px solid #374151;
+}
+
+:global(body.dark) .table tbody tr:hover {
+  background: #283548;
+}
+
+:global(body.dark) .selectedRow {
+  background: #243246 !important;
+}
+
+:global(body.dark) .title,
+:global(body.dark) .preview,
+:global(body.dark) .date span:first-child {
+  color: #fff;
+}
+
+:global(body.dark) .time,
+:global(body.dark) .date span:last-child {
+  color: #94a3b8;
+}
+
+:global(body.dark) .tag {
+  background: rgba(124,58,237,.15);
+  color: #c4b5fd;
+}
+
+:global(body.dark) .type {
+  background: rgba(37,99,235,.18);
+  color: #93c5fd;
+}
+
+:global(body.dark) .starBtn,
+:global(body.dark) .menuBtn {
+  background: transparent;
+  border: none;
+}
+
+:global(body.dark) .menuBtn svg {
+  color: #e5e7eb;
+}
+
+:global(body.dark) .star{
+  color:#facc15 !important;
+  fill:#facc15 !important;
+}
+
+:global(body.dark) .starEmpty{
+  color:#facc15 !important;
+}
+:global(body.dark) .dropdownMenu{
+  background:#1f2937;
+  border:1px solid #374151;
+}
+
+:global(body.dark) .dropdownMenu button{
+  color:#f3f4f6;
+}
+
+:global(body.dark) .dropdownMenu button:hover{
+  background:#2b3648;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1100px) {
+
+  .table {
+    min-width: 900px;
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .tableWrapper {
+    padding: 12px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .preview {
+    font-size: 14px;
+  }
+
+  .image {
+    width: 38px;
+    height: 38px;
+  }
+
+  .starBtn,
+  .menuBtn {
+    width: 32px;
+    height: 32px;
+  }
+
+}
+/* REMOVE THREE DOT BOX */
+
+.menuBtn {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.menuBtn:hover {
+  background: transparent !important;
+}
+
+.menuBtn svg {
+  width: 22px;
+  height: 22px;
+  color: #64748b;
+}
+/* THREE DOT BUTTON FIX */
+
+.moreBtn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.moreBtn svg {
+  font-size: 20px;
+  color: #64748b;
+}
+
+
+.moreBtn:hover {
+  background: transparent;
+}
+
+
+:global(body.dark) .moreBtn {
+  background: transparent;
+  border: none;
+}
+
+:global(body.dark) .moreBtn svg {
+  color: #e5e7eb;
+}
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 5px 10px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+
+.removeTag {
+  border: none;
+  background: transparent;
+  color: #6366f1;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+
+.removeTag:hover {
+  color: #ef4444;
+}
+.signBadge,
+.textBadge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;     
+    min-width: 110px;        
+    padding: 8px 14px;
+}

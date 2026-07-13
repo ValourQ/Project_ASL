@@ -1,0 +1,288 @@
+.card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.selected {
+  border: 2px solid var(--primary);
+}
+
+
+/* =========================
+   ICON AREA
+========================= */
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(99,102,241,.06);
+}
+
+
+.iconBox {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(99,102,241,.12);
+  color: var(--primary);
+
+  transition: var(--transition);
+}
+
+.iconBox:hover {
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   FAVORITE BUTTON
+========================= */
+
+.favoriteBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.9);
+  color: #ff4d6d;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: var(--transition);
+}
+
+.favoriteBtn:hover {
+  transform: scale(1.1);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  padding: 18px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+
+.menuBtn {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  color: var(--secondary-text);
+  transition: var(--transition);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.menuBtn:hover {
+  color: var(--primary);
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.badge {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(99,102,241,.12);
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description {
+  margin-top: 14px;
+
+  color: var(--secondary-text);
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  display: -webkit-box;
+  display: box;
+
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 18px;
+}
+
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--secondary-text);
+  font-size: 13px;
+}
+
+
+/* =========================
+   LIST VIEW
+========================= */
+
+.listCard {
+  flex-direction: row;
+}
+
+
+.listCard .imageContainer {
+  width: 260px;
+  height: 180px;
+
+  flex-shrink: 0;
+}
+
+
+.listCard .content {
+  flex: 1;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+:global(body.dark) .card {
+  background: var(--card-color);
+  border-color: var(--border-color);
+}
+
+
+:global(body.dark) .favoriteBtn {
+  background: rgba(40,40,40,.9);
+}
+
+
+:global(body.dark) .badge {
+  background: rgba(99,102,241,.18);
+}
+
+
+:global(body.dark) .imageContainer {
+  background: rgba(255,255,255,.04);
+}
+
+
+:global(body.dark) .iconBox {
+  background: rgba(99,102,241,.25);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:992px) {
+
+  .listCard {
+    flex-direction: column;
+  }
+
+
+  .listCard .imageContainer {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width:768px) {
+
+  .imageContainer {
+    height: 170px;
+  }
+
+
+  .content {
+    padding: 16px;
+  }
+
+
+  .header h3 {
+    font-size: 16px;
+  }
+
+}

@@ -1,0 +1,324 @@
+/* ==========================================
+   HISTORY SEARCH
+========================================== */
+.searchBox {
+  width: 300px;
+  height: 52px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  gap: 10px;
+}
+
+.searchBox input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+}
+
+.searchBox input::placeholder {
+  color: #9ca3af;
+}
+
+.searchIcon {
+  color: #6b7280;
+  font-size: 18px;
+}
+
+
+/* ===========================
+   LEFT SECTION
+=========================== */
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.searchBox {
+  width: 300px;
+  height: 52px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  transition: 0.3s;
+}
+
+/* ===========================
+   CALENDAR BUTTON
+=========================== */
+
+.calendarButton{
+  height:52px;
+  min-width:240px;
+  padding:0 18px;
+  background:#ffffff;
+  border:2px solid #6c3cff;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  cursor:pointer;
+  transition:.3s;
+  font-size:15px;
+  font-weight:500;
+  color:#374151;
+}
+
+.calendarButton:hover{
+  background:linear-gradient(135deg,#2979ff,#6c3cff);
+  color:#ffffff;
+  border-color:transparent;
+  box-shadow:0 8px 20px rgba(108,60,255,.25);
+}
+
+.calendarIcon{
+  font-size:18px;
+  color:#6c3cff;
+}
+
+.arrowIcon{
+  font-size:16px;
+  color:#6b7280;
+}
+
+.calendarButton:hover .calendarIcon,
+.calendarButton:hover .arrowIcon{
+  color:#ffffff;
+}
+
+/* ===========================
+   FILTER BUTTON
+=========================== */
+
+.filterWrapper {
+  position: relative;
+}
+
+.filterButton {
+  height: 52px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2979ff, #6c3cff);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.filterMenu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+
+  width: 180px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.filterMenu button {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filterMenu button:hover {
+  background: #f3f4f6;
+}
+/* ===========================
+   RIGHT SECTION
+=========================== */
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===========================
+   VIEW BUTTONS
+=========================== */
+
+.viewButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: .3s;
+  color: #6b7280;
+}
+
+.viewButton:hover {
+  background: #f4f8ff;
+  border-color: #2979ff;
+}
+
+.active {
+  background: linear-gradient(135deg,#2979ff,#6c3cff);
+  color: white;
+  border: none;
+}
+
+/* ===========================
+   DATE PICKER POPUP
+=========================== */
+
+:global(.react-datepicker) {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+:global(.react-datepicker__header) {
+  background: linear-gradient(135deg,#2979ff,#6c3cff);
+  border: none;
+}
+
+:global(.react-datepicker__current-month) {
+  color: white;
+}
+
+:global(.react-datepicker__day-name) {
+  color: white;
+}
+
+:global(.react-datepicker__navigation-icon::before) {
+  border-color: white;
+}
+
+:global(.react-datepicker__day--selected) {
+  background: #2979ff;
+}
+
+:global(.react-datepicker__day:hover) {
+  background: #dbeafe;
+}
+
+
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark) .searchBox{
+    background:#1f2937;
+    border:1px solid #374151;
+}
+
+:global(body.dark) .searchBox input{
+    background:transparent;
+    color:white;
+}
+
+:global(body.dark) .searchBox input::placeholder{
+    color:#94a3b8;
+}
+
+:global(body.dark) .searchIcon{
+    color:#94a3b8;
+}
+
+:global(body.dark) .filterButton{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:1200px){
+
+.leftSection{
+flex-wrap:wrap;
+}
+
+.calendarBox{
+width:190px;
+}
+
+}
+
+@media (max-width:992px){
+
+.searchContainer{
+flex-direction:column;
+align-items:stretch;
+}
+
+.leftSection{
+width:100%;
+}
+
+.rightSection{
+justify-content:flex-end;
+}
+
+}
+
+@media (max-width:768px){
+
+.leftSection{
+flex-direction:column;
+align-items:stretch;
+}
+
+.searchBox,
+.calendarBox,
+.filterButton{
+width:100%;
+}
+
+.filterButton{
+justify-content:center;
+}
+
+.rightSection{
+justify-content:center;
+margin-top:10px;
+}
+
+}
+
+@media (max-width:480px){
+
+.searchBox{
+min-width:100%;
+}
+
+.viewButton{
+width:44px;
+height:44px;
+}
+
+}

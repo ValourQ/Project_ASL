@@ -1,0 +1,235 @@
+.row {
+  transition: var(--transition);
+}
+
+.row:hover {
+  background: rgba(97, 90, 246, 0.05);
+  cursor: pointer;
+}
+
+.activeRow {
+  background: rgba(97, 90, 246, 0.12);
+}
+
+.cell {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.thumbnail {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.description {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.signBadge {
+  background: rgba(97, 90, 246, 0.12);
+  color: var(--primary);
+}
+
+.textBadge {
+  background: rgba(97, 90, 246, 0.12);
+  color: var(--secondary);
+}
+
+.practiceBadge {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--success);
+}
+
+.uploadBadge {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateText {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.time {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--secondary-text);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  color: var(--secondary-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.iconButton:hover {
+  background: rgba(97, 90, 246, 0.08);
+  color: var(--primary);
+}
+
+@media (max-width: 992px) {
+  .cell {
+    padding: 16px;
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    gap: 12px;
+  }
+
+  .thumbnail {
+    width: 46px;
+    height: 46px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .iconButton {
+    width: 32px;
+    height: 32px;
+  }
+}
+/* ==========================================
+   DARK MODE
+========================================== */
+
+:global(body.dark-mode) .row {
+  background: #1f2937;
+}
+
+:global(body.dark-mode) .row:hover {
+  background: #2d3748;
+}
+
+:global(body.dark-mode) .activeRow {
+  background: rgba(79, 70, 229, 0.25);
+}
+
+:global(body.dark-mode) .cell {
+  border-bottom: 1px solid #374151;
+}
+
+:global(body.dark-mode) .thumbnail {
+  border-color: #374151;
+}
+
+:global(body.dark-mode) .title {
+  color: #ffffff;
+}
+
+:global(body.dark-mode) .description {
+  color: #94a3b8;
+}
+
+:global(body.dark-mode) .dateText {
+  color: #f3f4f6;
+}
+
+:global(body.dark-mode) .time {
+  color: #94a3b8;
+}
+
+:global(body.dark-mode) .iconButton {
+  color: #cbd5e1;
+}
+
+:global(body.dark-mode) .iconButton:hover {
+  background: rgba(79, 70, 229, 0.2);
+  color: #60a5fa;
+}
+
+/* Badges */
+
+:global(body.dark-mode) .signBadge {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+:global(body.dark-mode) .textBadge {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+:global(body.dark-mode) .practiceBadge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+:global(body.dark-mode) .uploadBadge {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}

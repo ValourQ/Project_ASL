@@ -1,0 +1,389 @@
+/* ==========================================
+   PAGE
+========================================== */
+
+.page {
+    min-height: 100vh;
+    padding: 20px 24px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+
+.header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
+}
+
+
+.header h1 {
+    margin:0;
+    font-size:28px;
+    font-weight:700;
+}
+
+
+.header p {
+    margin:6px 0 0;
+    color:#64748b;
+    font-size:14px;
+}
+
+
+
+.headerActions {
+
+    display:flex;
+    gap:10px;
+    align-items:center;
+
+}
+
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+
+.searchBox {
+
+    width:240px;
+    height:40px;
+    padding:0 14px;
+
+    border:1px solid var(--border-color);
+
+    border-radius:12px;
+
+    background:var(--card-bg);
+
+    color:var(--text-color);
+
+    outline:none;
+
+    font-size:14px;
+
+}
+
+
+
+.searchBox::placeholder {
+
+    color:#94a3b8;
+
+}
+
+
+
+/* ==========================================
+   FILTER BUTTON
+========================================== */
+
+
+.filterWrapper {
+
+    position:relative;
+
+}
+
+
+
+.filterBtn {
+
+    height:40px;
+
+    padding:0 16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #2979ff,
+        #6c3cff
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+}
+
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+
+.content{
+
+    display:grid;
+
+    grid-template-columns:
+    1.6fr 0.8fr;
+
+    gap:12px;
+
+    align-items:start;
+
+}
+
+
+
+.left {
+
+    min-width:0;
+
+}
+
+
+
+.right {
+
+    min-width:0;
+
+    position:relative;
+
+    top:15px;
+
+}
+
+
+
+/* ==========================================
+   FILTER MENU
+========================================== */
+
+
+.filterMenu {
+
+    position:absolute;
+
+    right:0;
+
+    top:45px;
+
+    width:170px;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:8px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+
+    z-index:50;
+
+}
+
+
+
+.filterMenu button {
+
+    width:100%;
+
+    padding:10px;
+
+    border:none;
+
+    background:none;
+
+    text-align:left;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+}
+
+
+
+.filterMenu button:hover {
+
+    background:#eef4ff;
+
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+
+footer {
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+
+:global(body.dark) {
+
+    --bg-color:#111827;
+
+    --card-bg:#1f2937;
+
+    --text-color:#f9fafb;
+
+    --border-color:#374151;
+
+}
+
+
+
+:global(body.dark) .header p,
+:global(body.dark) footer {
+
+    color:#cbd5e1;
+
+}
+
+
+
+:global(body.dark) .filterMenu {
+
+    background:#1f2937;
+
+    border:1px solid #374151;
+
+}
+
+
+
+:global(body.dark) .filterMenu button {
+
+    color:white;
+
+}
+
+
+
+:global(body.dark) .filterMenu button:hover {
+
+    background:#273449;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:1100px){
+
+
+.content {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.right{
+
+    min-width:0;
+
+    position:relative;
+
+    top:0;
+
+}
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.header {
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+
+
+.headerActions {
+
+    width:100%;
+
+}
+
+
+
+.searchBox {
+
+    flex:1;
+
+    width:auto;
+
+}
+
+
+}
+
+.filterBtn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.filterIcon{
+  font-size:18px;
+}
+.searchWrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon{
+    position: absolute;
+    left: 16px;
+    font-size: 18px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.searchBox{
+    padding-left: 45px;   /* icon ke liye space */
+}
