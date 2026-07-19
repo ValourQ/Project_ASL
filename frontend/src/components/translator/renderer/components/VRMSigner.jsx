@@ -54,7 +54,7 @@ function landmarkDirection(frame, fromIndex, toIndex, target) {
     return Number.isFinite(target.lengthSq()) && target.lengthSq() > 0.000001;
 }
 
-export default function VrmSigner({ frameRef }) {
+export default function VRMSigner({ frameRef }) {
     const gltf = useLoader(GLTFLoader, MODEL_URL, (loader) => {
         loader.register((parser) => new VRMLoaderPlugin(parser));
     });

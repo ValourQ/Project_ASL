@@ -1,5 +1,5 @@
-import VrmSigner from "./VrmSigner";
+import VRMSigner from "./VRMSigner";
 
 export default function SkeletonRenderer({ frameRef }) {
-    return frameRef ? <VrmSigner frameRef={frameRef} /> : null;
+    return frameRef ? <VRMSigner frameRef={frameRef} /> : null;
 }
