@@ -15,10 +15,9 @@ import * as THREE from "three";
  */
 
 // Chest / signing-space focal point — hands sit near viewport center.
-const DEFAULT_TARGET = [0, 1.06, 0];
-const DEFAULT_POSITION = [0, 1.42, 2.45];
-
-const MIN_DISTANCE = 2.0;
+const DEFAULT_POSITION =  [0, 1.65, 1.65];
+const DEFAULT_TARGET = [0, 1.33, 0];
+const MIN_DISTANCE = 1.5;
 const MAX_DISTANCE = 4.5;
 // Limit steep bird's-eye angles that crop the head.
 const MIN_POLAR_ANGLE = Math.PI / 2.35;
@@ -177,6 +176,7 @@ export default function CameraController() {
             maxDistance={MAX_DISTANCE}
             minPolarAngle={MIN_POLAR_ANGLE}
             maxPolarAngle={MAX_POLAR_ANGLE}
+            target={DEFAULT_TARGET}
         />
     );
 }

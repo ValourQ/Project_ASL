@@ -11,8 +11,8 @@ import { Suspense } from "react";
 
 // Must stay in sync with CameraController defaults.
 export const DEFAULT_CAMERA = {
-    position: [0, 1.42, 2.45],
-    fov: 38,
+    position: [0, 1.55, 1.65],
+    fov: 28,
     near: 0.1,
     far: 100,
 };
