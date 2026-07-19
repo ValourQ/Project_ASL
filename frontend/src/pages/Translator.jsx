@@ -11,30 +11,16 @@ import TextInput from "../components/translator/TextInput";
 import AvatarPreview from "../components/translator/AvatarPreview";
 import styles from "../styles/translator/Translator.module.css";
 import { useParams } from "react-router-dom";
+import useTextToSign from "../hooks/useTextToSign";
 
 function Translator() {
     /*============Translator=========*/
     const navigate = useNavigate();
     const [translatorMode, setTranslatorMode] = useState("sign");
-    const [text, setText] = useState("");
-    const [error, setError] = useState("");
-    const onGenerate = () => {
-
-        const cleanedText = text.trim();
-
-        if (!cleanedText) {
-
-            setError("Please enter some text before generating.");
-
-            return;
-
-        }
-
-        setError("");
-
-        console.log("Generating:", cleanedText);
-
-    };
+    const {text,setText,loading,error,translation,sequence,statistics,
+        runtime,summary,supportedWords,translate, clearTranslation,} = useTextToSign();
+    const onGenerate = async () => {
+    await translate();};
 
     /* ================= MODE ================= */
 
@@ -272,16 +258,29 @@ function Translator() {
                         <>
                         <div className={styles.textInput}>
                             <TextInput
+
                                 text={text}
+
                                 setText={setText}
+
                                 onGenerate={onGenerate}
+
                                 error={error}
-                                setError={setError}
+
+                                loading={loading}
+
                             />
                         </div>
 
                         <div className={styles.avatarPreview}>
-                            <AvatarPreview />
+                           <AvatarPreview
+                                translation={translation}
+                                sequence={sequence}
+                                statistics={statistics}
+                                runtime={runtime}
+                                loading={loading}
+                                onClear={clearTranslation}
+                            />
                         </div>
                       </>
                     )}

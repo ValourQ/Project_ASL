@@ -26,10 +26,9 @@ from ml.preprocessing.animation_index import (
     build_animation_index,
     print_statistics
 )
-
+from ml.preprocessing.exporter import export_database
+from ml.preprocessing.manifest import generate_manifest
 # These will be enabled later
-# from exporter import export_database
-# from manifest import generate_manifest
 # from upload_supabase import upload_database
 
 
@@ -83,19 +82,19 @@ def main():
     )
 
     # ------------------------------------------------------
-    # Step 3 : Export Database
-    # ------------------------------------------------------
+    #Step 3 : Export Runtime Database
+    #-------------------------------------------------------
 
-    # export_database(
-    #     animation_index,
-    #     landmarks
-    # )
+    export_database(
+        animation_index,
+        landmarks
+    )
 
     # ------------------------------------------------------
     # Step 4 : Generate Manifest
     # ------------------------------------------------------
 
-    # generate_manifest(animation_index)
+    generate_manifest()
 
     # ------------------------------------------------------
     # Step 5 : Upload to Supabase

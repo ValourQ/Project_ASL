@@ -15,18 +15,36 @@ import {
     Sparkles
 
 } from "lucide-react";
-
+import CanvasScene from "./renderer/CanvasScene";
 import styles from "../../styles/translator/AvatarPreview.module.css";
 
 function AvatarPreview({
 
-    generated = false,
+    translation = null,
 
-    animationName = "",
+    sequence = [],
 
-    status = "Waiting for input"
+    statistics = null,
+
+    runtime = null,
+
+    loading = false,
+
+    onClear = () => {},
 
 }) {
+
+    const generated = sequence.length > 0;
+    const animationName =
+        generated
+            ? `${sequence.length} Sign${sequence.length > 1 ? "s" : ""}`
+            : "None";
+    const status =
+        loading
+            ? "Generating..."
+            : generated
+                ? "Ready"
+                : "Waiting";
 
     return (
 
@@ -54,7 +72,7 @@ function AvatarPreview({
 
                         <p>
 
-                            View generated sign language animation
+                            View sign language animation
 
                         </p>
 
@@ -69,7 +87,7 @@ function AvatarPreview({
                         fill="currentColor"
                     />
 
-                    Ready
+                    {status}
 
                 </div>
 
@@ -89,7 +107,14 @@ function AvatarPreview({
 
                         {/* Future Avatar / Video / Lottie */}
 
-                        <Hand size={90}/>
+                        <div
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                            }}
+                        >
+                            <CanvasScene />
+                        </div>
 
                     </div>
 
@@ -125,15 +150,27 @@ function AvatarPreview({
 
                 <div className={styles.infoRow}>
 
-                    <span>
+                    <span>Status</span>
 
-                        Status
+                    <strong>{status}</strong>
 
-                    </span>
+                </div>
+
+                <div className={styles.infoRow}>
+
+                    <span>Animations</span>
+
+                    <strong>{sequence.length}</strong>
+
+                </div>
+
+                <div className={styles.infoRow}>
+
+                    <span>Recognized Words</span>
 
                     <strong>
 
-                        {status}
+                        {statistics?.recognized_words ?? 0}
 
                     </strong>
 
@@ -141,21 +178,23 @@ function AvatarPreview({
 
                 <div className={styles.infoRow}>
 
-                    <span>
-
-                        Animation
-
-                    </span>
+                    <span>Unknown Words</span>
 
                     <strong>
 
-                        {
+                        {statistics?.unknown_words ?? 0}
 
-                            animationName ||
+                    </strong>
 
-                            "None"
+                </div>
 
-                        }
+                <div className={styles.infoRow}>
+
+                    <span>Runtime</span>
+
+                    <strong>
+
+                        {runtime?.runtime_version ?? "--"}
 
                     </strong>
 
@@ -193,6 +232,8 @@ function AvatarPreview({
 
                 <button
                     className={styles.clearButton}
+                    onClick={onClear}
+                    disabled={!generated}
                 >
 
                     <Trash2 size={18}/>

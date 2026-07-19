@@ -19,7 +19,7 @@ function TextInput({
 
     error,
 
-    setError
+    loading
 
 }) {
 
@@ -103,13 +103,16 @@ function TextInput({
                     onChange={handleUpload}
                 />
 
-                <button
+                <label
                     htmlFor="uploadTxt"
                     className={styles.toolButton}
                 >
-                    <FileText size={18}/>
+
+                    <FileText size={18} />
+
                     Upload TXT
-                </button>
+
+                </label>
 
                 <button
                     className={styles.toolButton}
@@ -131,12 +134,11 @@ function TextInput({
                className={styles.textArea}
                value={text}
                placeholder="Type your message here..."
-                onChange={(e)=>{
+               onChange={(e) => {
+
                     setText(e.target.value);
-                    if(error){
-                        setError("");
-                    }
-            }}></textarea>
+
+                }}></textarea>
             {/* ================= INFO ================= */}
 
             <div className={styles.infoRow}>
@@ -171,11 +173,24 @@ function TextInput({
             {/* ================= BUTTON ================= */}
 
             <button
+
                 className={styles.generateButton}
+
                 onClick={onGenerate}
+
+                disabled={loading}
+
             >
                 <Wand2 size={20}/>
-                Generate Sign Animation
+                {
+
+                    loading
+
+                        ? "Generating..."
+
+                        : "Generate Sign Animation"
+
+                }
             </button>
               
             {

@@ -78,7 +78,17 @@ def validate_dataset() -> None:
             "\nRequired dataset files are missing."
         )
 
-    paths.ANIMATIONS_DIR.mkdir(
+    paths.TEXT_TO_SIGN_ANIMATIONS.mkdir(
+    parents=True,
+    exist_ok=True
+    )
+
+    paths.TEXT_TO_SIGN_MANIFESTS.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    paths.TEXT_TO_SIGN_AVATARS.mkdir(
         parents=True,
         exist_ok=True
     )
@@ -171,12 +181,12 @@ def load_dataset() -> Tuple[List[Dict], np.lib.npyio.NpzFile]:
 
 def get_output_directory() -> Path:
     """
-    Return animation output directory.
+    Return Text → Sign animation directory.
     """
 
-    paths.ANIMATIONS_DIR.mkdir(
+    paths.TEXT_TO_SIGN_ANIMATIONS.mkdir(
         parents=True,
         exist_ok=True
     )
 
-    return paths.ANIMATIONS_DIR
+    return paths.TEXT_TO_SIGN_ANIMATIONS

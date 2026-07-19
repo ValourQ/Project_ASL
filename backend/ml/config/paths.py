@@ -39,10 +39,34 @@ FILTERED_LABELS = DATASET_DIR / "filtered_labels.txt"
 
 ASSETS_DIR = PROJECT_ROOT / "backend" / "assets"
 
-ANIMATIONS_DIR = ASSETS_DIR / "animations"
+# ----------------------------------------------------------
+# Text → Sign Runtime Assets
+# ----------------------------------------------------------
 
-# ==========================================================
-# Manifest
-# ==========================================================
+TEXT_TO_SIGN_DIR = ASSETS_DIR / "text_to_sign"
 
-MANIFEST_FILE = ASSETS_DIR / "animation_manifest.json"
+TEXT_TO_SIGN_ANIMATIONS = TEXT_TO_SIGN_DIR / "animations"
+
+TEXT_TO_SIGN_MANIFESTS = TEXT_TO_SIGN_DIR / "manifests"
+
+TEXT_TO_SIGN_AVATARS = TEXT_TO_SIGN_DIR / "avatars"
+
+ANIMATION_MANIFEST = (
+    TEXT_TO_SIGN_MANIFESTS /
+    "animation_manifest.json"
+)
+
+# ----------------------------------------------------------
+# Sign → Text Runtime Assets
+# ----------------------------------------------------------
+
+SIGN_TO_TEXT_DIR = ASSETS_DIR / "sign_to_text"
+
+SIGN_TO_TEXT_MODELS = SIGN_TO_TEXT_DIR / "models"
+
+SIGN_TO_TEXT_LABELS = SIGN_TO_TEXT_DIR / "labels"
+
+SIGN_TO_TEXT_PREPROCESSORS = (
+    SIGN_TO_TEXT_DIR /
+    "preprocessors"
+)
